@@ -120,7 +120,7 @@ var count = patient.length;
         */
         if (choice == 1) {
             console.log("Name of the Patient are ::  " + data.getNameFromPatient(object))
-            var name = readline.question('enter the name of the doctor :')
+            var name = readline.question('Enter the name of the Patient :')
             while (!data.getNameFromPatient(object).includes(name)) {//if the array includes the user giventotalCountame ony that time it will remove 
                 console.log('enter the valid name ')
                 name = readline.question('enter the name u want to search : ')
@@ -129,6 +129,7 @@ var count = patient.length;
                 if (patient[key].name == name) {
                     console.log('ur patient details')
                     console.log(patient[key])
+                    console.log('sout')
                 }
             }
         }
