@@ -2,41 +2,41 @@
     "Doctor": [
         {
             "name": "Dr.jon desoza",
-            "Id": 123,
-            "specialisation": "cardiologist",
+            "Id": "123",
+            "specialisation": "Cardiologist",
             "availability": "AM"
         },
         {
             "name": "Dr.narayan panji",
-            "Id": 1444,
-            "specialisation": "nerologist",
+            "Id": "1444",
+            "specialisation": "Nerologist",
             "availability": "Both"
         },
         {
             "name": "Dr.Kanchana",
-            "Id": 203,
+            "Id": "203",
             "specialisation": "Ophthalmolo ",
             "availability": "Both"
         },
         {
             "name": "Dr.Prasad gudde",
             "Id": "D303",
-            "specialisation": "dynacologist",
-            "availability": "P"
+            "specialisation": "Dynacologist",
+            "availability": "PM"
         }
     ],
     "Patient": [
         {
-            "name": "kjk",
-            "Id": "hj77",
-            "phoneNumber": 78745454554,
+            "name": "aaa",
+            "Id": "11",
+            "phoneNumber": 7874545455,
             "age": 45,
             "appointmentFrom": "Dr.bnm",
             "onTheDayOf": 28
         },
         {
             "name": "abc",
-            "Id": 54958,
+            "Id": "22",
             "phoneNumber": 2563148595,
             "age": 20,
             "appointmentFrom": "'Dr.Kanchana",

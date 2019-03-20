@@ -1,4 +1,5 @@
-
+var linked = require('../Utility/LinkedList');
+var read =  require('readline-sync');
 /**
  * Purpose      :   Maintain the List of CompanyShares in a Linked List And add new CompanyShares as 
                     well as or removed easily.
@@ -9,14 +10,13 @@
  * @since       :   19-3-2019
  **/
 
-var linked = require('../Utility/LinkedList');
-var read =  require('readline-sync');
+
 
 //used for performing file operations.
 var fs = require('fs');
 
 //used to read data from json file
-var element = fs.readFileSync('Company.json');
+var element = fs.readFileSync('CompanyLinkedList.json');
 
 var jsonCompanyData = JSON.parse(element);
 
@@ -90,7 +90,7 @@ function Stocklinkedlist()
         console.log('Output Array is :');     
         console.log(arrayForOutput);
         var b={"company":arrayForOutput}
-        fs.writeFileSync('./company.json', JSON.stringify(b), 'utf-8', function () 
+        fs.writeFileSync('./CompanyLinkedList.json', JSON.stringify(b), 'utf-8', function () 
         {
             console.log('done')
         });

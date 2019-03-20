@@ -12,72 +12,96 @@ const fileStream = require('fs')
  * @since       :   19-3-2019
  **/
 
-var acess = fileStream.readFileSync('CliniqueManagement.json')
+var acess = fileStream.readFileSync('clinicManage.json')
 object = JSON.parse(acess)
 var data = new util.Clinic(object);
 
 var doctor = object.Doctor;
 var patient = object.Patient
 var count = patient.length;
-while (ans != 4) {
+    console.log()
     console.log('****** ClinicManagment ******');
-
-    console.log('1 to search for doctor')
-    console.log('2 to search for patient')
-    console.log('3 to take appointment')
-    var ans = readline.question('enter the choice :')
+    console.log()
+    console.log('1 to search for Doctor')
+    console.log('2 to search for Patient')
+    console.log('3 to take Appointment')
+    console.log()
+    var ans = readline.question('Enter the choice : ')
+    while (ans != 4) {
+    /** 
+    *   @description:If the input is 1 then search for the Doctor
+    */
     if (ans == 1) {
-        console.log(' 1 to search doctor by his name')
-        console.log(' 2 to search doctor by his id')
-        console.log(' 3 to search doctor by his specialisation')
-        var choice = readline.questionInt('enter ur choice :')
+        console.log(' 1 to search doctor by his Name')
+        console.log(' 2 to search doctor by his Id')
+        console.log(' 3 to search doctor by his Specialisation')
+        var choice = readline.questionInt('Enter ur choice : ')
+        /** 
+        *   @description:If the Input is 1 then search doctor by his Name
+        */
         if (choice == 1) {
-          data.getNameFromDoctor(object);
+            data.getNameFromDoctor(object);
+            /*
+                      console.log(' 1 to search Dr.jon desoza')
+                      console.log(' 2 to search Dr.narayan panji')
+                      console.log(' 3 to search Dr.Kanchana')
+                      console.log(' 4 to search Dr.Prasad gudde')
+                      //var choice = readline.questionInt('enter ur choice :')
+      
+            if (choice == 1) {
+                data.getNameFromDoctor(object);
+                */
+                console.log("Name of the doctors are ::  " + data.getNameFromDoctor(object));
+                var name = readline.question('Enter the name of the Doctor : ')
+                while (!data.getNameFromDoctor(object).includes(name)) {//if the array includes the user giventotalCountname any that time it will remove 
+                    console.log('Enter The valid Name  ')
+                    name = readline.question('Enter the correct name of the Doctor :')
+                }
             
-            console.log("name of the doctors are - " + data.getNameFromDoctor(object));
-            var name = readline.question('enter the name of the doctor :')
-            while (!data.getNameFromDoctor(object).includes(name)) {//if the array includes the user giventotalCountame ony that time it will remove 
-                console.log('enter the valid name : ')
-                name = readline.question('enter the name u want to search :')
-            }
             for (let key in doctor) {
                 if (doctor[key].name == name) {
-                    console.log('ur doctor details :')
+                    console.log('Your doctor details : ')
                     console.log(doctor[key])
                 }
             }
         }
+        /** 
+        *   @description:If the Input is 2 then search doctor by his Id
+        */
         else if (choice == 2) {
-            console.log("id of the doctors are - " + data.getIdFromDoctor(object))
-            var Id = readline.question('enter the id of the doctor : ')
+            console.log("Id of the Doctors Are ::  " + data.getIdFromDoctor(object))
+            var Id = readline.question('Enter the Id of the Doctor : ')
             while (!data.getIdFromDoctor(object).includes(Id)) {//if the array includes the user giventotalCountame ony that time it will remove 
-                console.log('enter the valid Id :')
-                Id = readline.question('enter the Id u want to search :')
+                console.log('Enter the valid Id ')
+                Id = readline.question('Enter the Id of the Doctor : ')
             }
             for (let key in doctor) {
                 if (doctor[key].Id == Id) {
-                    console.log('ur doctor details')
+                    console.log('Your Doctor Details : ')
                     console.log(doctor[key])
                 }
             }
         }
+        /** 
+        *   @description:If the Input is 3 then search doctor by his Specialisation
+        */
         else if (choice == 3) {
-            console.log("specialisation of the doctors are - " + data.getSpecialisationFromDoctor(object))
-            var specialisation = readline.question('enter the specialisation of the doctor: ')
+            console.log("Specialisation of the doctors are ::  " + data.getSpecialisationFromDoctor(object))
+            var specialisation = readline.question('Enter the specialisation of the Doctor: ')
             while (!data.getSpecialisationFromDoctor(object).includes(specialisation)) {//if the array includes the user giventotalCountame ony that time it will remove 
-                console.log('enter the valid specialisation')
-                specialisation = readline.question('enter the specialisation u want to search :  ')
+                console.log('Enter the valid specialisation')
+                specialisation = readline.question('Enter the specialisation of the Doctor :  ')
             }
             for (let key in doctor) {
                 if (doctor[key].specialisation == specialisation) {
-                    console.log('ur doctor details')
+                    console.log('Your Doctor Details :')
                     console.log(doctor[key])
                 }
             }
 
         }
         else {
-            console.log('enter valid input')
+            console.log('Enter Valid Input')
         }
     }
 
@@ -85,12 +109,17 @@ while (ans != 4) {
      * @description:if the input is 2 then search for the patients that are in the hospital
     */
     else if (ans == 2) {
+        console.log()
         console.log('1 to search patient by his name')
         console.log('2 to search patient by his id')
         console.log('3 to search patient by his phonenumber')
-        var choice = readline.questionInt('enter ur choice')
+        console.log()
+        var choice = readline.questionInt('Enter Your Choice :: ')
+        /** 
+        *   @description:If the Input is 1 then search patient by his Name
+        */
         if (choice == 1) {
-            console.log("name of the doctors are : " + data.getNameFromPatient(object))
+            console.log("Name of the Patient are ::  " + data.getNameFromPatient(object))
             var name = readline.question('enter the name of the doctor :')
             while (!data.getNameFromPatient(object).includes(name)) {//if the array includes the user giventotalCountame ony that time it will remove 
                 console.log('enter the valid name ')
@@ -104,7 +133,7 @@ while (ans != 4) {
             }
         }
         else if (choice == 2) {
-            console.log("id of the patient are - " + d.getIdFromPatient(object))
+            console.log("id of the patient are - " + data.getIdFromPatient(object))
             var Id = readline.question('enter the id of the patient: ')
             while (!data.getIdFromPatient(object).includes(Id)) {//if the array includes the user giventotalCountame ony that time it will remove 
                 console.log('enter the valid Id')
