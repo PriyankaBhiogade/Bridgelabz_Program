@@ -13,38 +13,15 @@
             }
         },
         {
-            "Name": "kanchan",
-            "LastName": "deghe",
+            "Name": "pirf",
+            "LastName": "sd",
             "Address": {
-                "Street": "1",
-                "City": "indore",
-                "State": "madpra",
-                "Nation": "indian",
-                "Zip": "450331",
-                "PhoneNum": "8989876543"
-            }
-        },
-        {
-            "Name": "aru",
-            "LastName": "sow",
-            "Address": {
-                "Street": "23",
-                "City": "pune",
-                "State": "maharashtra",
-                "Zip": "555555",
-                "PhoneNum": "2354123456"
-            }
-        },
-        {
-            "Name": "priyanka",
-            "LastName": "bhiogade",
-            "Address": {
-                "Street": "xyz,bvch,cdfbv",
-                "City": "mumbai",
+                "Street": "dfd",
+                "City": "dsfs",
                 "State": "maha",
-                "Nationality": "indiadnmc",
-                "Zip": "123456",
-                "PhoneNum": "1452369874"
+                "Nationality": "sdfcuy",
+                "Zip Code": "123456",
+                "PhoneNum": "1234567890"
             }
         }
     ]

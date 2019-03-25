@@ -19,7 +19,7 @@ for (var i = 0; i < obj.Rice.length; i++) {
     var w = obj.Rice[i].weight;
     var p = obj.Rice[i].price;
 
-    let product = new util.Rice(n, w, p);
+    let product = new util.Rice(n, w, p);//object of Rice class
     var total = product.total();
     console.log((i+1)+"] Name of Rice is " + n + " And " + " Weight is " + w)
     console.log();
@@ -33,7 +33,7 @@ for (var i = 0; i < obj.Pulses.length; i++) {
     var w = obj.Pulses[i].weight;
     var p = obj.Pulses[i].price;
 
-    var add = new util.Pulses(n, w, p)
+    var add = new util.Pulses(n, w, p)//object of Pulses class
     var total = add.total();
     console.log((i+1)+"] Name of pulses is  " + n + " And " + " Weight is " + w)
     console.log();
@@ -47,7 +47,7 @@ for (var i = 0; i < obj.Wheats.length; i++) {
     var w = obj.Wheats[i].weight;
     var p = obj.Wheats[i].price;
 
-    var add = new util.Wheats (n, w, p)
+    var add = new util.Wheats (n, w, p)//object of Wheat class
     var total = add.total();
     console.log((i+1)+"] Name of Wheat is " + n + " And " + " Weight is " + w)
     console.log();

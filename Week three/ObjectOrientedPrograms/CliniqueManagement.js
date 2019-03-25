@@ -19,23 +19,23 @@ var data = new util.Clinic(object);
 var doctor = object.Doctor;
 var patient = object.Patient
 var count = patient.length;
-    console.log()
-    console.log('****** ClinicManagment ******');
-    console.log()
-    console.log('1 to search for Doctor')
-    console.log('2 to search for Patient')
-    console.log('3 to take Appointment')
-    console.log()
-    var ans = readline.question('Enter the choice : ')
-    while (ans != 4) {
+console.log()
+console.log('****** ClinicManagment ******');
+console.log()
+console.log('1 to Search for Doctor')
+console.log('2 to Search for Patient')
+console.log('3 to Take Appointment')
+console.log()
+var ans = readline.question('Enter the choice : ')
+while (ans != 4) {
     /** 
     *   @description:If the input is 1 then search for the Doctor
     */
     if (ans == 1) {
-        console.log(' 1 to search doctor by his Name')
-        console.log(' 2 to search doctor by his Id')
-        console.log(' 3 to search doctor by his Specialisation')
-        var choice = readline.questionInt('Enter ur choice : ')
+        console.log(' 1 to Search Doctor by his Name')
+        console.log(' 2 to search Doctor by his Id')
+        console.log(' 3 to Search Doctor by his Specialisation')
+        var choice = readline.questionInt('Enter Your choice : ')
         /** 
         *   @description:If the Input is 1 then search doctor by his Name
         */
@@ -51,13 +51,13 @@ var count = patient.length;
             if (choice == 1) {
                 data.getNameFromDoctor(object);
                 */
-                console.log("Name of the doctors are ::  " + data.getNameFromDoctor(object));
-                var name = readline.question('Enter the name of the Doctor : ')
-                while (!data.getNameFromDoctor(object).includes(name)) {//if the array includes the user giventotalCountname any that time it will remove 
-                    console.log('Enter The valid Name  ')
-                    name = readline.question('Enter the correct name of the Doctor :')
-                }
-            
+            console.log("Name of the doctors are ::  " + data.getNameFromDoctor(object));
+            var name = readline.question('Enter the name of the Doctor : ')
+            while (!data.getNameFromDoctor(object).includes(name)) {//if the array includes the user giventotalCountname any that time it will remove 
+                console.log('Enter The valid Name  ')
+                name = readline.question('Enter the correct name of the Doctor :')
+            }
+
             for (let key in doctor) {
                 if (doctor[key].name == name) {
                     console.log('Your doctor details : ')
@@ -110,9 +110,9 @@ var count = patient.length;
     */
     else if (ans == 2) {
         console.log()
-        console.log('1 to search patient by his name')
-        console.log('2 to search patient by his id')
-        console.log('3 to search patient by his phonenumber')
+        console.log('1 to search patient by his Name')
+        console.log('2 to search patient by his Id')
+        console.log('3 to search patient by his Phonenumber')
         console.log()
         var choice = readline.questionInt('Enter Your Choice :: ')
         /** 
@@ -120,50 +120,56 @@ var count = patient.length;
         */
         if (choice == 1) {
             console.log("Name of the Patient are ::  " + data.getNameFromPatient(object))
-            var name = readline.question('Enter the name of the Patient :')
+            var name = readline.question('Enter the Name of the Patient :')
             while (!data.getNameFromPatient(object).includes(name)) {//if the array includes the user giventotalCountame ony that time it will remove 
-                console.log('enter the valid name ')
-                name = readline.question('enter the name u want to search : ')
+                console.log('Enter The valid Name ')
+                name = readline.question('Enter the Name of the Patient :: ')
             }
             for (let key in patient) {
                 if (patient[key].name == name) {
-                    console.log('ur patient details')
+                    console.log('Your Patient Details :: ')
                     console.log(patient[key])
-                    console.log('sout')
+
                 }
             }
         }
+        /** 
+        *   @description:If the Input is 2 then search patient by his ID
+        */
         else if (choice == 2) {
-            console.log("id of the patient are - " + data.getIdFromPatient(object))
-            var Id = readline.question('enter the id of the patient: ')
+            console.log("Id of the Patient are ::  " + data.getIdFromPatient(object))
+            var Id = readline.question('Enter the Id of the patient:: ')
             while (!data.getIdFromPatient(object).includes(Id)) {//if the array includes the user giventotalCountame ony that time it will remove 
-                console.log('enter the valid Id')
-                Id = readline.question('enter the Id u want to search : ')
+                console.log('Enter the Valid Id')
+                Id = readline.question('Enter the Id of the patient:: ')
             }
             for (let key in patient) {
                 if (patient[key].Id == Id) {
-                    console.log('ur patient details')
+                    console.log('Your Patient Details :: ')
                     console.log(patient[key])
                 }
             }
         }
+        /** 
+        *   @description:If the Input is 3 then search patient by his Phonenumber
+        */
         else if (choice == 3) {
-            console.log("phonenumber of the patients are - " + data.getPhoneNumberFromPatient(object))
-            var phoneNumber = readline.question('enter the phoneNumber of the patient')
+            console.log("Phonenumber of the Patients are :: " + data.getPhoneNumberFromPatient(object))
+            var phoneNumber = readline.question('Enter the PhoneNumber of the Patient:: ')
             while (!data.getPhoneNumberFromPatient(object).includes(phoneNumber)) {//if the array includes the user giventotalCountame ony that time it will remove 
-                console.log('enter the valid phonenum')
-                phoneNumber = readline.question('enter the phonenumber u want to search : ')
+                console.log('Enter the valid Phonenumber')
+                phoneNumber = readline.question('Enter the PhoneNumber of the Patient:: ')
             }
             for (let key in patient) {
                 if (patient[key].phoneNumber == phoneNumber) {
-                    console.log('ur patient details')
+                    console.log('Your Patient Details ::')
                     console.log(patient[key])
                 }
             }
 
         }
         else {
-            console.log('enter valid input :')
+            console.log('Enter Valid input :')
         }
     }
     /** 
@@ -181,30 +187,30 @@ var count = patient.length;
             var day = date.getDate()
         }
 
-        var name = readline.question("enter the patientname :")
-        var age = readline.questionInt("enter the age of the patient :")
+        var name = readline.question("Enter the Patient Name :: ")
+        var age = readline.questionInt("Enter The Age of the Patient :: ")
         var Id = Math.floor(Math.random() * 100000)
-        var phoneNumber = readline.questionInt('enter the phoneNumber :')
+        var phoneNumber = readline.questionInt('Enter the Phone Number ::')
         while (phoneNumber > 9999999999 || phoneNumber < 999999999) {
-            console.log("number should be of 10 digit")
-            phoneNumber = readline.questionInt('enter different phone number :')
+            console.log("Number should be of 10 Digit")
+            phoneNumber = readline.questionInt('Enter Different Phone Number :: ')
         }
-        console.log("doctors that are present are")
+        console.log("Doctors that are present Are")
         console.log(data.getNameFromDoctor(object));
-        var appointmentFrom = readline.question('enter the doctor name from u want to take appointment : ')
+        var appointmentFrom = readline.question('Enter the Doctor Name from You want to Take Appointment :: ')
         patient.push({
-            "name": name,
+            "Name": name,
             "Id": Id,
-            "phoneNumber": phoneNumber,
-            "age": age,
-            "appointmentFrom": appointmentFrom,
-            "onTheDayOf": day
+            "PhoneNumber": phoneNumber,
+            "Age": age,
+            "AppointmentFrom": appointmentFrom,
+            "OnTheDayOf": day
 
         })
         fileStream.writeFileSync('clinicManage.json', JSON.stringify(object))
-        console.log("your appointment is confirmed on  :" + day)
+        console.log("Your Appointment is Confirmed On  :: " + day)
 
     }
     else
-        console.log('enter valid input :')
+        console.log('Enter Valid Input :')
 }

@@ -22,6 +22,7 @@ var jsonCompanyData = JSON.parse(element);
 
 var list = new linked.LinkedList;
 
+
 //used to call a function once for each element in an array, in order
 for(var key in jsonCompanyData.company)
 {

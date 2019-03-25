@@ -1,0 +1,10 @@
+{
+    "transaction": [
+        {
+            "symbol": "TATA",
+            "customerId": "1111",
+            "type": "sell",
+            "date": "19/03/2019"
+        }
+    ]
+}

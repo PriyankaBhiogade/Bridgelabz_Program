@@ -8,7 +8,7 @@ class Data {
         return this.w * this.p;
     }
 }
-class Rice extends Data {
+class Rice extends Data {//Rice class extend the property of data class
  
     constructor(n,w,p)
     {
@@ -16,7 +16,7 @@ class Rice extends Data {
     }
 }
 
-class Pulses extends Data {
+class Pulses extends Data {//Pulses class extend the property of data class
  
     constructor(n,w,p)
     {
@@ -24,7 +24,7 @@ class Pulses extends Data {
     }
 }
 
-class Wheats extends Data {
+class Wheats extends Data {//Wheats class extend the property of data class
  
     constructor(n,w,p)
     {
